@@ -1,0 +1,135 @@
+body {
+  background: rgb(0, 0, 0);
+}
+
+p {
+  color: lawngreen;
+}
+
+h1 {
+  animation: anim;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+
+  height: 70vh;
+  width: 90vw;
+  margin-right: 10%;
+  margin-left: 5%;
+  margin-top: 10%;
+}
+
+.main > div {
+  background-color: whitesmoke;
+  color: black;
+
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.main > div.photo {
+  height: 120%;
+  align-self: center;
+  background-image: url("Images/IMG_3440.JPG");
+  box-shadow: 2px 3px 5px 6px rgb(7, 4, 4);
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  transform: translateY(-200%);
+  animation: slide-up 2s forwards;
+  z-index: 1;
+}
+
+.main > div.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-200%);
+  animation: slide-in 2s forwards;
+  overflow: auto;
+}
+
+.main > div.nav > a.menu {
+  transform: translateX(-200%);
+  animation: slide-in 1s forwards;
+  background-color: lightskyblue;
+}
+
+.main > div.nav > a.menu:hover {
+  cursor: text;
+}
+
+.main > div.nav > a.about,
+.main > div.nav > a.phone,
+.main > div.nav > a.mail {
+  transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+}
+
+.main > div.content {
+  width: 10vw;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.main > div.content > div.post {
+  border-style: dotted;
+  border-color: aqua;
+  margin: 20px;
+}
+
+#main1 > h2 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap;
+  border-right: 0.15em solid black;
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 6s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-up {
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-left {
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: black;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
